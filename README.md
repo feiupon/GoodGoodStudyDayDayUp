@@ -3,14 +3,19 @@ X-ui 可视化面板搭建教程
 XRAY搭建教程
 
 准备工作
+
 1、VPS 准备 Debian 9+
+
 2、域名解析到VPS 的IP 上
 
 申请SSL证书
 
 apt update -y
+
 apt install -y curl
+
 apt install -y socat
+
 curl https://get.acme.sh | sh
 ~/.acme.sh/acme.sh --register-account -m xxx@xxx.xxx
 
@@ -61,9 +66,13 @@ reboot
 
 2:开启防火墙
 iptables -P INPUT ACCEPT
+
 iptables -P FORWARD ACCEPT
+
 iptables -P OUTPUT ACCEPT
+
 iptables -F
+
 apt-get purge netfilter-persistent
 
 reboot 重启
